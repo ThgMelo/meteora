@@ -1,5 +1,8 @@
 "use client"
+
 import { styled } from "styled-components";
+import { PrimaryInput } from "./primary-input";
+import { LogoDesktop } from "./LogoDesktop";
 
 interface HeaderProps{
 
@@ -11,6 +14,7 @@ const TagHeader = styled.header`
     padding-left: 23px;
     padding-right: 23px;
     height: 58px;
+    background-color: var(--color-fill-black);
 `;
 
 const TagNav = styled.nav`
@@ -38,28 +42,35 @@ const Container = styled.div`
     padding-bottom: 10.5px;
 `;
 
+const TagA = styled.a`
+    color: var(--color-fill-white);
+    text-decoration: none;
+    line-height: 23px;
+`;
+
 export function Header(props : HeaderProps){
     return(
         <TagHeader>
             <TagNav>
                 <TagUl>
                     <li>
-                        <a href="">Meteora</a>
+                        <TagA href="">
+                            <LogoDesktop/>
+                        </TagA>
                     </li>
                     <li>
-                        <a href="">Nossas lojas</a>
+                        <TagA href="">Nossas lojas</TagA>
                     </li>
                     <li>
-                        <a href="">Novidades</a>
+                        <TagA href="">Novidades</TagA>
                     </li>
                     <li>
-                        <a href="">Promoções</a>
+                        <TagA href="">Promoções</TagA>
                     </li>
                 </TagUl>
             </TagNav>
             <Container>
-                <input type="text" />
-                <button>Search</button>
+                <PrimaryInput placeholder="Digite o produto"/>
             </Container>
         </TagHeader>
     );
